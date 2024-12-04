@@ -7,7 +7,7 @@ return require('packer').startup( function(use)
   use "wbthomason/packer.nvim"
   use "tpope/vim-fugitive"
   use "mbbill/undotree"
-  use "folke/tokyonight.nvim"
+  -- use "folke/tokyonight.nvim"
   use "theprimeagen/harpoon" 
   use "nvim-lua/plenary.nvim" 
   use "tpope/vim-commentary"
@@ -43,14 +43,27 @@ return require('packer').startup( function(use)
 -- }
 
 -- }
+-- Visuals
+--
+use { "catppuccin/nvim", as = "catppuccin" }
 
-
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup({})
+    end,
+  }
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+--
   use({
       'MeanderingProgrammer/render-markdown.nvim',
       after = { 'nvim-treesitter' },
       requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
       -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
-      equires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
       config = function()
           require('render-markdown').setup({})
 
@@ -72,7 +85,8 @@ return require('packer').startup( function(use)
 
 
 use {
-    'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' 
+    'nvim-telescope/telescope-fzf-native.nvim', 
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' 
   }
 
 use {

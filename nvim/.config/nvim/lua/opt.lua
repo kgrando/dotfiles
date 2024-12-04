@@ -14,12 +14,11 @@ vim.opt.signcolumn = 'auto'
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = '100'
-
+vim.opt.colorcolumn = '110'
 
 vim.opt.relativenumber = true
-vim.opt.shiftwidth=4
-vim.opt.mouse=v
+vim.opt.shiftwidth = 4
+vim.opt.mouse = v
 vim.opt.syntax = 'on'
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
