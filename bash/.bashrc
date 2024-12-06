@@ -95,7 +95,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval `ssh-agent` 
-# set -o vi
+set -o vi
 
 # workaround... oh-my-post works with source .bashrc, but not at startup
 eval "$($HOME/.local/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
