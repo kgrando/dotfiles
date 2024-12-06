@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
-vim.keymap.set("n", "<leader>ex", ":Ex<CR>")
+vim.keymap.set("n", "<leader>pv", ":q!<CR>")
 -- for tmux to word correctly
 vim.keymap.set("i", "jj", "<Esc>")
 

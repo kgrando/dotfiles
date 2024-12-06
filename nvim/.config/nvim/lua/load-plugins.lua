@@ -15,6 +15,14 @@ return require('packer').startup( function(use)
   use "tpope/vim-surround"
   use 'iamcco/markdown-preview.nvim'
   use 'mfussenegger/nvim-lint'
+  use 'lewis6991/gitsitns.nvim'
+
+  -- use {
+  --   'lewis6991/gitsigns.nvim',
+  --   config = function()
+  --     require('gitsigns').setup({})
+  --   end,
+  -- }
 
 -- LSP
   use 'neovim/nvim-lspconfig'
@@ -47,12 +55,6 @@ return require('packer').startup( function(use)
 --
 use { "catppuccin/nvim", as = "catppuccin" }
 
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup({})
-    end,
-  }
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
