@@ -101,3 +101,4 @@ set -o vi
 eval "$($HOME/.local/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
 
 
+. "$HOME/.cargo/env"
