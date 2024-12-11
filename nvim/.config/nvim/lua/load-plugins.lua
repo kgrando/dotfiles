@@ -17,13 +17,6 @@ return require('packer').startup( function(use)
   use 'mfussenegger/nvim-lint'
   use 'lewis6991/gitsitns.nvim'
 
-  -- use {
-  --   'lewis6991/gitsigns.nvim',
-  --   config = function()
-  --     require('gitsigns').setup({})
-  --   end,
-  -- }
-
 -- LSP
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
