@@ -97,7 +97,7 @@ export NVM_DIR="$HOME/.nvm"
 eval `ssh-agent` 
 set -o vi
 
-if [ -d $HOME/.local/bin/oh-my-posh ]; then
+if [ -f $HOME/.local/bin/oh-my-posh ]; then
   # workaround... oh-my-post works with source .bashrc, but not at startup
   eval "$($HOME/.local/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
 fi
