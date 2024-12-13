@@ -15,7 +15,7 @@ return require('packer').startup( function(use)
   use "tpope/vim-surround"
   use 'iamcco/markdown-preview.nvim'
   use 'mfussenegger/nvim-lint'
-  use 'lewis6991/gitsitns.nvim'
+  use 'lewis6991/gitsigns.nvim'
 
 -- LSP
   use 'neovim/nvim-lspconfig'
