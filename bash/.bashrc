@@ -102,6 +102,6 @@ if [ -f $HOME/.local/bin/oh-my-posh ]; then
   eval "$($HOME/.local/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
 fi
 
-if [ -d $HOME/.coargo ]; then
+if [ -d $HOME/.cargo ]; then
   . "$HOME/.cargo/env"
 fi
