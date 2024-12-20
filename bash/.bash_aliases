@@ -19,7 +19,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='trash -v'
 alias mkdir='mkdir -p'
-alias ps='ps auxf'
+# alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
@@ -58,3 +58,16 @@ alias ldir="ls -l | egrep '^d'" # directories only
 # docker alias
 alias dpurge='docker image rm $(docker image ls -q) && docker volume rm $(docker volume ls)' 
 alias dc='docker compose'
+
+#functions
+#Wraps ssh and sets the window title for tmux
+#
+#
+#parent_command=$(ps -o comm= -p $(ps -o ppid= -p $$))
+# if [[ "$parent_command" == *tmux* ]]; then
+# ssh() {
+#   tmux rename-window "$(echo $* | cut -d . -f 1)"
+#   command ssh "$@"
+#   tmux set-window-option automatic-rename "on" 1>/dev/null
+#  }
+# fi

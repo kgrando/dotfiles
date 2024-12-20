@@ -105,3 +105,12 @@ fi
 if [ -d $HOME/.cargo ]; then
   . "$HOME/.cargo/env"
 fi
+
+if command -v tmux>/dev/null; then
+tssh() {
+  tmux rename-window "$(echo $* | cut -d . -f 1)"
+  command ssh "$@"
+  tmux set-window-option automatic-rename "on" 1>/dev/null
+ }
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
