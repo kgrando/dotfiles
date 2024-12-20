@@ -16,6 +16,7 @@ return require('packer').startup( function(use)
   use 'iamcco/markdown-preview.nvim'
   use 'mfussenegger/nvim-lint'
   use 'lewis6991/gitsigns.nvim'
+  use 'christoomey/vim-tmux-navigator'
 
 -- LSP
   use 'neovim/nvim-lspconfig'
