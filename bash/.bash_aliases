@@ -59,6 +59,29 @@ alias ldir="ls -l | egrep '^d'" # directories only
 alias dpurge='docker image rm $(docker image ls -q) && docker volume rm $(docker volume ls)' 
 alias dc='docker compose'
 
+# Kubernetes
+
+alias k='kubectl'
+alias h='helm'
+kns() {
+  if [ -z "$1" ]; then
+    echo "Usage: kns <namespace>"
+    return 1
+  fi
+
+  local NAMESPACE="$1"
+
+  # Update the current namespace in kubectl configuration
+  kubectl config set-context --current --namespace="$NAMESPACE"
+
+  if [ $? -eq 0 ]; then
+    echo "Switched to namespace: $NAMESPACE"
+  else
+    echo "Failed to switch namespace to: $NAMESPACE" >&2
+    return 1
+  fi
+}
+
 #functions
 #Wraps ssh and sets the window title for tmux
 #
