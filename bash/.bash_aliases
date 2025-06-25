@@ -37,7 +37,7 @@ alias .....='cd ../../../..'
 alias repos="cd $HOME/repos"
 alias onedrive="cd $HOME/onedrive"
 alias obsidian='cd "$HOME/onedrive/Obsidian Vaults/faebu'\''s vault"'
-
+alias root-obsidian="cd '/mnt/c/Users/gfa/OneDrive - Ro-ot Service AG/Documents/Obsidian  Vault/root_vault'"
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
@@ -81,7 +81,7 @@ kns() {
     return 1
   fi
 }
-
+alias ssh='TERM=screen ssh'
 #functions
 
 ## Yazi
