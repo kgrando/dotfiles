@@ -114,3 +114,4 @@ tssh() {
  }
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
+export PATH="/home/faebu/bin/neovim/bin:$PATH"
