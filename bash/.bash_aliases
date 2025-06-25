@@ -37,7 +37,7 @@ alias .....='cd ../../../..'
 alias repos="cd $HOME/repos"
 alias onedrive="cd $HOME/onedrive"
 alias obsidian='cd "$HOME/onedrive/Obsidian Vaults/faebu'\''s vault"'
-alias root-obsidian="cd '/mnt/c/Users/gfa/OneDrive - Ro-ot Service AG/Documents/Obsidian  Vault/root_vault'"
+
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
@@ -81,7 +81,7 @@ kns() {
     return 1
   fi
 }
-alias ssh='TERM=screen ssh'
+
 #functions
 
 ## Yazi
@@ -93,14 +93,15 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-#Wraps ssh and sets the window title for tmux
-#
-#
-#parent_command=$(ps -o comm= -p $(ps -o ppid= -p $$))
-# if [[ "$parent_command" == *tmux* ]]; then
-# ssh() {
-#   tmux rename-window "$(echo $* | cut -d . -f 1)"
-#   command ssh "$@"
-#   tmux set-window-option automatic-rename "on" 1>/dev/null
-#  }
-# fi
+## Use nala instead of apt
+apt() {
+  command nala "$@"
+}
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}
