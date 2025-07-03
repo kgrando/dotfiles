@@ -31,3 +31,6 @@ vim.opt.number = true
 vim.opt.clipboard = unnamedplus
 vim.opt.cursorline = true
 vim.opt.ttyfast = true               
+
+-- for Obsidian Markdown to render correctly
+vim.opt.conceallevel = 1
