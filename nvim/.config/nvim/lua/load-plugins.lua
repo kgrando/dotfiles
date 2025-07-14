@@ -52,13 +52,13 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	--
-	use({
-		"render-markdown",
-		after = { "nvim-treesitter" },
-		requires = { "echasnovski/mini.nvim", opt = true }, -- if you use the mini.nvim suite
-		requires = { "echasnovski/mini.icons", opt = true }, -- if you use standalone mini plugins
-		requires = { "nvim-tree/nvim-web-devicons", opt = true }, -- if you prefer nvim-web-devicons
-	})
+	-- use({
+	-- 	"render-markdown",
+	-- 	after = { "nvim-treesitter" },
+	-- 	requires = { "echasnovski/mini.nvim", opt = true }, -- if you use the mini.nvim suite
+	-- 	requires = { "echasnovski/mini.icons", opt = true }, -- if you use standalone mini plugins
+	-- 	requires = { "nvim-tree/nvim-web-devicons", opt = true }, -- if you prefer nvim-web-devicons
+	-- })
 
 	use({
 		"s1n7ax/nvim-window-picker",
@@ -78,6 +78,12 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope-fzf-native.nvim",
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 	})
+    use {
+      'aspeddro/pandoc.nvim',
+      config = function()
+        require'pandoc'.setup()
+      end
+    }
 
 	use({
 		"nvim-treesitter/nvim-treesitter",

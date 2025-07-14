@@ -6,12 +6,12 @@ require("obsidian").setup({
 		-- },
 		{
 			name = "work",
-			path = "/mnt/c/Users/gfa/OneDrive - Ro-ot Service AG/Documents/Obsidian  Vault/root_vault",
+			path = "~/root-obsidian",
 		},
 	},
 
 	ui = {
-		enable = true, -- set to false to disable all additional syntax features
+		enable = false, -- set to false to disable all additional syntax features
 		update_debounce = 20, -- update delay after a text change (in milliseconds)
 		max_file_length = 5000, -- disable UI features for files with more than this many lines
 		-- Define how various check-boxes are displayed
