@@ -16,7 +16,7 @@ Due to its nature of being a symlink manager, adding neu configs and deploying n
 In order to setup a new machine follow these instructions.
 
 1. Install  
-    ``` sudo apt install git htop kitty neofetch neovim trash-cli pipx ```  
+    ``` sudo apt install git htop kitty neofetch neovim trash-cli ranger ```  
     ``` brew install nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow ```  
     ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
 2. Clone this repo ```git clone --config core.autocrlf=input --config core.eol=lf https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
