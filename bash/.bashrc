@@ -86,13 +86,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-if [ -f "$HOME/.use-nala" ]; then
-        . "$HOME/.use-nala"
-fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval `ssh-agent` 
 set -o vi
@@ -115,3 +109,12 @@ tssh() {
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 export PATH="/$HOME/bin/neovim/bin:$PATH"
+
+source <(kubectl completion bash)
+
+complete -F __start_kubectl k
+
+export KUBECONFIG=/mnt/c/Users/gke/.kube/kubeconfig
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

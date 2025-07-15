@@ -18,7 +18,7 @@ In order to setup a new machine follow these instructions.
 1. Install  
     ``` sudo apt install git htop kitty neofetch neovim  ```  
     ``` brew install nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow ```
-2. Clone this repo ```git clone https://github.com/kgrando/dotfiles.git ```
+2. Clone this repo ```git clone --config core.autocrlf=input --config core.fileMode=false https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
 3. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
-4. Run ```stow <dir_name>``` to create the simlinks.
+4. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop kitty neofetch nushell nvim poshthemes tmux yazi zsh ```
 5. Done
