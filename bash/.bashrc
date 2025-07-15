@@ -91,9 +91,9 @@ fi
 eval `ssh-agent` 
 set -o vi
 
-if [ -f $HOME/.local/bin/oh-my-posh ]; then
+if [ -f /home/linuxbrew/.linuxbrew/bin/oh-my-posh ]; then
   # workaround... oh-my-post works with source .bashrc, but not at startup
-  eval "$($HOME/.local/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
 fi
 
 if [ -d $HOME/.cargo ]; then
