@@ -34,9 +34,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias repos="cd $HOME/repos"
-alias onedrive="cd $HOME/onedrive"
-alias obsidian='cd "$HOME/onedrive/Obsidian Vaults/faebu'\''s vault"'
+alias onedrive="cd /mnt/c/Users/gke/OneDrive\ -\ GrandoAzure/"
 
 
 # Alias's for multiple directory listing commands
@@ -63,24 +61,11 @@ alias dc='docker compose'
 
 alias k='kubectl'
 alias h='helm'
-kns() {
-  if [ -z "$1" ]; then
-    echo "Usage: kns <namespace>"
-    return 1
-  fi
+alias ks='kubecm switch'
 
-  local NAMESPACE="$1"
-
-  # Update the current namespace in kubectl configuration
-  kubectl config set-context --current --namespace="$NAMESPACE"
-
-  if [ $? -eq 0 ]; then
-    echo "Switched to namespace: $NAMESPACE"
-  else
-    echo "Failed to switch namespace to: $NAMESPACE" >&2
-    return 1
-  fi
-}
+# SSH
+alias asp='ssh root@asp.root.ch -i /home/gke/Shell/LoginRootFirewalls.key'
+alias sslvpn='ssh root@sslvpn.root.ch -i /home/gke/Shell/LoginRootFirewalls.key'
 
 #functions
 
@@ -91,17 +76,4 @@ function y() {
 	IFS= read -r -d '' cwd < "$tmp"
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
-}
-
-## Use nala instead of apt
-apt() {
-  command nala "$@"
-}
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
 }
