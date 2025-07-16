@@ -36,7 +36,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 if [ "$(uname)" = "Darwin" ]; then
-  alias onedrive="cd $HOME/GrandoAzure"
+  alias onedrive='cd "$HOME/OneDrive - GrandoAzure"'
+
 else
   alias onedrive="cd /mnt/c/Users/gke/OneDrive\ -\ GrandoAzure/"
 fi
