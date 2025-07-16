@@ -34,7 +34,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias onedrive="cd /mnt/c/Users/gke/OneDrive\ -\ GrandoAzure/"
+
+if [ "$(uname)" = "Darwin" ]; then
+  alias onedrive="cd $HOME/GrandoAzure"
+else
+  alias onedrive="cd /mnt/c/Users/gke/OneDrive\ -\ GrandoAzure/"
+fi
 
 
 # Alias's for multiple directory listing commands

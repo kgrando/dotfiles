@@ -22,7 +22,20 @@ In order to setup a new machine follow these instructions.
     ``` brew install nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow ```  
     ``` brew install --cask font-fira-code-nerd-font ```  
     ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
-2. Clone this repo ``` git clone --config core.autocrlf=input --config core.eol=lf https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
-3. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
-4. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop kitty neofetch nushell nvim poshthemes tmux yazi zsh ```
-5. tmux session -> ``` crtl + B : ``` -> ``` source-file ~/.tmux.conf ```
+2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
+3. Clone this repo ``` git clone --config core.autocrlf=input --config core.eol=lf https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
+4. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
+5. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop kitty neofetch nushell nvim poshthemes tmux yazi ```
+6. tmux session -> ``` crtl + B : ``` -> ``` source-file ~/.tmux.conf ```
+
+## MacOS
+
+1. Install  
+    ``` brew install bash git htop kitty neovim trash-cli ranger nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow ```  
+    ``` brew install --cask font-fira-code-nerd-font ```  
+    ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
+2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
+3. Clone this repo ``` git clone --config core.autocrlf=input --config core.eol=lf https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
+4. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
+5. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop kitty neofetch nushell nvim poshthemes tmux yazi ```
+6. tmux session -> ``` crtl + B : ``` -> ``` source-file ~/.tmux.conf ```

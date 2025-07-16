@@ -87,18 +87,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ "$(uname)" = "Darwin" ]; then
+  BREW_PATH="/opt/homebrew/bin"
+else
+  BREW_PATH="/home/linuxbrew/.linuxbrew/bin"
+fi
 
-eval `ssh-agent` 
+eval "$($BREW_PATH/brew shellenv)"
+eval "$($BREW_PATH/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
+
 set -o vi
-
-if [ -f /home/linuxbrew/.linuxbrew/bin/oh-my-posh ]; then
-  # workaround... oh-my-post works with source .bashrc, but not at startup
-  eval "$(/home/linuxbrew/.linuxbrew/bin/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
-fi
-
-if [ -d $HOME/.cargo ]; then
-  . "$HOME/.cargo/env"
-fi
 
 if command -v tmux>/dev/null; then
 tssh() {
@@ -114,9 +112,8 @@ source <(kubectl completion bash)
 
 complete -F __start_kubectl k
 
-export KUBECONFIG=/mnt/c/Users/gke/.kube/kubeconfig
+export KUBECONFIG=$HOME/.kube/kubeconfig
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # ranger cd to selected path
@@ -134,4 +131,4 @@ function ranger {
         cd -- "$(cat "$tempfile")" || return
     fi
     command rm -f -- "$tempfile" 2>/dev/null
-} 
+}
