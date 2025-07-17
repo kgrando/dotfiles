@@ -98,14 +98,20 @@ eval "$($BREW_PATH/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet
 
 set -o vi
 
-if command -v tmux>/dev/null; then
-tssh() {
-  tmux rename-window "$(echo $* | cut -d . -f 1)"
-  command ssh "$@"
-  tmux set-window-option automatic-rename "on" 1>/dev/null
- }
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+if command -v tmux >/dev/null; then
+  # SSH wrapper that renames tmux window to host
+  tssh() {
+    tmux rename-window "$(echo "$*" | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+  }
+
+  # Attach to last session or start new one if not inside tmux
+  if [[ ! $TERM =~ screen ]] && [ -z "$TMUX" ]; then
+    tmux attach 2>/dev/null || tmux new
+  fi
 fi
+
 export PATH="/$HOME/bin/neovim/bin:$PATH"
 
 source <(kubectl completion bash)
