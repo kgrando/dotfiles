@@ -76,21 +76,42 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Detect platform
+OS="$(uname -s)"
+
+case "$OS" in
+    Darwin)
+        IS_MACOS=true
+        ;;
+    Linux)
+        IS_MACOS=false
+        ;;
+    *)
+        IS_MACOS=false
+        ;;
+esac
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-if [ "$(uname)" = "Darwin" ]; then
+if [ "$IS_MACOS" = true ]; then
   BREW_PATH="/opt/homebrew/bin"
 else
   BREW_PATH="/home/linuxbrew/.linuxbrew/bin"
+fi
+
+if ! shopt -oq posix; then
+  if [ "$IS_MACOS" = true ]; then
+    if [ -r "$BREW_PATH/../etc/profile.d/bash_completion.sh" ]; then
+      source "$BREW_PATH/../etc/profile.d/bash_completion.sh"
+    fi
+  else
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+      . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+    fi
+  fi
 fi
 
 eval "$($BREW_PATH/brew shellenv)"
