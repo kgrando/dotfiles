@@ -70,8 +70,8 @@ alias h='helm'
 alias ks='kubecm switch'
 
 # SSH
-alias asp='ssh root@asp.root.ch -i /home/gke/Shell/LoginRootFirewalls.key'
-alias sslvpn='ssh root@sslvpn.root.ch -i /home/gke/Shell/LoginRootFirewalls.key'
+alias asp='ssh root@asp.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
+alias sslvpn='ssh root@sslvpn.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
 
 #functions
 
