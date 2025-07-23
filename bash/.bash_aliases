@@ -72,6 +72,7 @@ alias ks='kubecm switch'
 # SSH
 alias asp='ssh root@asp.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
 alias sslvpn='ssh root@sslvpn.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
+alias sshLoad='ssh-add $HOME/Shell/LoginRootFirewalls.key $HOME/Shell/LoginMTF.key'
 
 #functions
 
