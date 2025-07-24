@@ -115,7 +115,6 @@ if ! shopt -oq posix; then
 fi
 
 # for Ranger...
-export EDITOR='nvim'
 
 eval "$($BREW_PATH/brew shellenv)"
 eval "$($BREW_PATH/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
