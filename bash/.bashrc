@@ -182,6 +182,9 @@ complete -F __start_kubectl k
 export KUBECONFIG=$HOME/.kube/kubeconfig
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+if [ "$IS_MACOS" = true ]; then
+  export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+fi
 
 # ranger cd to selected path
 function ranger {
