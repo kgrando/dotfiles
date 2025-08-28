@@ -1,12 +1,12 @@
 require("obsidian").setup({
 	workspaces = {
-		-- {
-		--   name = "personal",
-		--   path = "/mnt/c/Users/gfa/OneDrive - gygax.tech/Obsidian Vaults/faebu's vault",
-		-- },
 		{
-			name = "work",
-			path = "~/root-obsidian",
+		  name = "personal",
+		  path = "~/Obsidian/personal",
+		},
+		{
+	      name = "work",
+		  path = "~/Obsidian/work",
 		},
 	},
 
