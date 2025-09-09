@@ -17,7 +17,7 @@ set $wm_setting_key_up               k
 set $wm_setting_key_right            l
 
 set $wm_setting_app_terminal         kitty
-set $wm_setting_app_browser          flatpak run org.mozilla.firefox
+set $wm_setting_app_browser          firefox
 set $wm_setting_app_launcher         i3-dmenu-desktop
 set $wm_setting_app_compositor       picom
 
@@ -203,3 +203,7 @@ bindsym $mod+$smod+r restart
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# worspaces / monitors
+workspace "console" output DP-0.1.5
+workspace "web" output DP-0.1.6
