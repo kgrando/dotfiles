@@ -130,6 +130,8 @@ else
 fi
 # end ssh agent
 
+# QEMU
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 set -o vi
 

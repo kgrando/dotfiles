@@ -36,8 +36,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias repos="cd $HOME/repos"
 alias onedrive="cd $HOME/onedrive"
-alias obsidian='cd "$HOME/onedrive/Obsidian Vaults/faebu'\''s vault"'
-
+alias obsidian="cd $HOME/Obsidian"
+alias nc="cd $HOME/Nextcloud"
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
@@ -85,6 +85,8 @@ kns() {
 #functions
 
 ## Yazi
+alias yazi="flatpak run io.github.sxyazi.yazi"
+#
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -92,6 +94,7 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
 
 ## Use nala instead of apt
 apt() {
