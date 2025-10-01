@@ -207,3 +207,16 @@ bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # worspaces / monitors
 workspace "console" output DP-0.1.5
 workspace "web" output DP-0.1.6
+# Setup xss-lock daemon
+exec_always --no-startup-id xset +dpms dpms 0 300 300 
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh 
+
+
+# lock screen
+bindsym $smod + $mod + x mode "lock"
+
+mode "lock" {
+    bindsym l exec i3lock --ignore-empty-password --tiling --image='~/.config/i3/lockscreen.jpg' , mode "default"
+    # just force suspend. i3lock will be called automatically via lock.sh 
+    bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+}
