@@ -108,3 +108,11 @@ sudo() {
     command sudo "$@"
   fi
 }
+
+## Git shizzle
+# undo last commit
+alias gcu='git reset --soft HEAD~'
+
+
+## Misc
+alias tracert='traceroute'
