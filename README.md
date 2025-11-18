@@ -31,7 +31,7 @@ In order to setup a new machine follow these instructions.
 ## MacOS
 
 1. Install  
-    ``` brew install bash git htop kitty neovim trash-cli ranger nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow bash-completion@2 ```  
+    ``` brew install bash git htop kitty neovim trash-cli ranger nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow bash-completion@2 lnav ```  
     ``` brew install --cask font-fira-code-nerd-font ```  
     ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
 2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
