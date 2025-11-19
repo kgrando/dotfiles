@@ -37,5 +37,5 @@ In order to setup a new machine follow these instructions.
 2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
 3. Clone this repo ``` git clone --config core.autocrlf=input --config core.eol=lf https://github.com/kgrando/dotfiles.git $HOME/.dotfiles ```
 4. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
-5. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop kitty neofetch nushell nvim poshthemes tmux yazi ```
+5. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop i3 k9s kitty lazygit neofetch nushell nvim poshthemes ranger spotify_player tealdeer tmux yazi ```
 6. tmux session -> ``` crtl + B : ``` -> ``` source-file ~/.tmux.conf ```

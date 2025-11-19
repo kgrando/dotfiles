@@ -186,6 +186,8 @@ if [ "$IS_MACOS" = true ]; then
   export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 fi
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # ranger cd to selected path
 function ranger {
     local IFS=$'\t\n'

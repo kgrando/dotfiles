@@ -1,0 +1,13 @@
+plugins:
+  lnav:
+    shortCut: Ctrl-Y
+    confirm: false
+    description: "lnav"
+    scopes:
+      - pods
+    command: bash
+    background: false
+    args:
+      - -c
+      - |
+        kubectl logs -f -n $NAMESPACE $NAME | lnav
