@@ -10,4 +10,4 @@ plugins:
     args:
       - -c
       - |
-        kubectl logs -f -n $NAMESPACE $NAME | lnav
+        kubectl logs -f -n $NAMESPACE $NAME --all-containers | lnav
