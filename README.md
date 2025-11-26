@@ -19,7 +19,7 @@ In order to setup a new machine follow these instructions.
 
 1. Install  
     ``` sudo apt install git htop kitty neofetch neovim trash-cli ranger ```  
-    ``` brew install nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow ```  
+    ``` brew install nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow bash-completion@2 lnav stern ```  
     ``` brew install --cask font-fira-code-nerd-font ```  
     ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
 2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
@@ -31,7 +31,7 @@ In order to setup a new machine follow these instructions.
 ## MacOS
 
 1. Install  
-    ``` brew install bash git htop kitty neovim trash-cli ranger nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow bash-completion@2 lnav ```  
+    ``` brew install bash git htop kitty neovim trash-cli ranger nushell tmux jandedobbeleer/oh-my-posh/oh-my-posh yazi k9s kubecm kubectl-cnpg stow bash-completion@2 lnav stern ```  
     ``` brew install --cask font-fira-code-nerd-font ```  
     ``` git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm ```
 2. add Nerd Fonts to the Shell, each terminal emulator has its own way of doing this, so please refer to the documentation of your terminal emulator.
@@ -39,3 +39,10 @@ In order to setup a new machine follow these instructions.
 4. If you just want to add a new config, create the folder structure witin the repo and move the config files to there.
 5. Run ```stow <dir_name>``` to create the simlinks in the cloned directory. ``` stow bash htop i3 k9s kitty lazygit neofetch nushell nvim poshthemes ranger spotify_player tealdeer tmux yazi ```
 6. tmux session -> ``` crtl + B : ``` -> ``` source-file ~/.tmux.conf ```
+
+## get all brew packages
+
+``` bash
+brew list --cask > $HOME/.dotfiles/brewCasks.txt
+brew list --installed-on-request > $HOME/.dotfiles/brewPackages.txt
+```
