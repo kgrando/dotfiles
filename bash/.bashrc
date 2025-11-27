@@ -153,3 +153,9 @@ tssh() {
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 export PATH="/home/faebu/bin/neovim/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/gfa/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"

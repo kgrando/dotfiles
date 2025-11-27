@@ -115,4 +115,7 @@ alias gcu='git reset --soft HEAD~'
 
 
 ## Misc
-alias tracert='traceroute'
+alias tracert="traceroute"
+alias mip="ip --br a"
+
+

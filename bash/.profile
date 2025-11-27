@@ -29,3 +29,8 @@ fi
 if [ -d "$HOME/.cargo" ]; then
     . "$HOME/.cargo/env"
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/gfa/.lmstudio/bin"
+# End of LM Studio CLI section
+
