@@ -140,7 +140,9 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# move worspace to next output
+bindsym $mod+$smod+t+$wm_setting_key_left move workspace to output left
+bindsym $mod+$smod+t+$wm_setting_key_right move workspace to output right
 
 ### Gaps ###
 gaps horizontal $wm_setting_gap_width
@@ -207,6 +209,7 @@ bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # worspaces / monitors
 workspace "console" output DP-0.1.5
 workspace "web" output DP-0.1.6
+workspace "rdm" output DP-0.2
 # Setup xss-lock daemon
 exec_always --no-startup-id xset +dpms dpms 0 300 300 
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh 
