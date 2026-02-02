@@ -162,3 +162,4 @@ export WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"
 
 # use fzf for crtl+r
 source /usr/share/doc/fzf/examples/key-bindings.bash
+eval $(thefuck --alias)

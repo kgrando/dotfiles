@@ -1,7 +1,8 @@
-alias ll='ls -l'
+alias llr='ls -lrt'
 alias la='ls -A'
 alias l='ls -CF'
 alias bcat='batcat --paging=never'
+alias bat='batcat --paging=never'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -50,7 +51,8 @@ alias lr='ls -lRh' # recursive ls
 alias lt='ls -ltrh' # sort by date
 alias lm='ls -alh |more' # pipe through 'more'
 alias lw='ls -xAh' # wide listing format
-alias ll='ls -Fls' # long listing format
+alias ll='ls -Flst' # long listing format
+alias llr='ls -Flsrt' # long listing format
 alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
@@ -118,5 +120,4 @@ alias gcu='git reset --soft HEAD~'
 alias tracert="traceroute"
 alias mip="ip --br a"
 alias mpip="echo $(wget -qO- https://ipecho.net/plain)"
-
 
