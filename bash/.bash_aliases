@@ -30,6 +30,8 @@ alias multitail='multitail --no-repeat -c'
 
 # Change directory aliases
 alias home='cd $HOME'
+alias desk='cd $HOME/Desktop'
+alias dl='cd $HOME/Downloads'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
