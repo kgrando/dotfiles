@@ -23,6 +23,7 @@ snappy
 snzip
 stern
 stow
+telnet
 terraform
 tmux
 trash-cli
