@@ -1,6 +1,15 @@
 # der-faebu's Neovim setup.
+
+## Install from APT source
+
+Under Debian 13 apt should contain a relatively new version of nvim. if this is enough, install it
+with `sudo apt install -y nevom`. Otherwise the tool must be built from source. Keep in mind that
+lua dependencies are not installed this way nor will the tool be updated automatically via `apt upgrade`.
+
 ## Prerequisites/General:
-This repo assumes a Debian 12 installation with standard system utilities (selected during install). If thesese have not been installed, additional packages might be needed.
+
+This repo assumes a Debian 12 (at least) installation with standard system utilities (selected during install). 
+If thesese have not been installed, additional packages might be needed.
 
 Additionally, as of version 0.10 of Neovim, the following packages are required for building it from source:
 - git
@@ -15,11 +24,13 @@ sudo apt update && sudo apt install -y git cmake gettext unzip curl build-essent
 ```
 
 ## Building nvim from source
+
 ### General
 As many plugins require a relatively new version of neovim, we build it directly from the source.
 This guide follows the official guide: https://github.com/neovim/neovim/blob/master/BUILD.md
 
 #### Steps
+
 1. Clone the repo: 
 ```bash
 git clone https://github.com/neovim/neovim && cd neovim && git checkout release-0.10
@@ -38,6 +49,7 @@ mkdir -p ~/.config/nvim && git clone https://github.com/der-faebu/nvim-config ~/
 ```
 
 ## General folder structure
+
 We consider the following folder structure:
 ```
 ├── init.lua
@@ -59,6 +71,7 @@ We consider the following folder structure:
 ├── README.md
 ```
 ## Plugin manager
+
 Before starting further configuration we need to install packer
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -66,6 +79,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 
 ## Install Pulugins
+
 Open nvim and type 
 ```bash
 :PackerSync
@@ -73,13 +87,17 @@ Open nvim and type
 Quit and reopen nvim et voilà.
 
 # Useful shorthand
+
 ## Vim docs
+
 ### General
+
 Buffer: visual representation of in-memory stuff
 - a buffer can be opened in multiple Windows
 Window: contains buffers
 
 ### Movements
+
 #### Basic motions
 v	highlight
 V	highlight line
@@ -107,6 +125,7 @@ T <char>	behind last <char> (reverse)
 ,	last <char>
 
 #### Advanced motions
+
 {   go down one paragraph
 }   go up one paragraph
 
@@ -121,8 +140,11 @@ N   last result
 
 *   next Occurrence of current word
 \#  last Occurrence of current word
+
 ### Insert mode
+
 ### Visual mode
+
 vi' select between '' (select inner sigle quotes) also works for "
 viB select between {} (select inner braces)
 vib select between () (select inner block)

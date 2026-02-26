@@ -63,16 +63,16 @@ exec_always --no-startup-id $wm_setting_app_compositor
 ### Workspaces ###
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1  " console "
-set $ws2  "   web   "
-set $ws3  "    3    "
-set $ws4  "    4    "
-set $ws5  "    5    "
+set $ws1  "1-console"
+set $ws2  "2-web"
+set $ws3  "3-vmm"
+set $ws4  "4-music"
+set $ws5  "5-code"
 set $ws6  "    6    "
 set $ws7  "    7    "
 set $ws8  "    8    "
 set $ws9  "    9    "
-set $ws10 "    10    "
+set $ws10 "   10    "
 
 # Assing workspaces #
 assign [class="kitty"] $ws1
@@ -115,6 +115,12 @@ bindsym $mod+$smod+$wm_setting_key_down  move down
 bindsym $mod+$smod+$wm_setting_key_up    move up
 bindsym $mod+$smod+$wm_setting_key_right move right
 
+# Split windows
+bindsym $mod+\ split vertical
+bindsym $mod+_ split horizontal
+
+
+bindsym $mod+r mode "resize"
 # Resize window (you can also use the mouse for that)
 mode "resize" {
 #	These bindings trigger as soon as you enter the resize mode
@@ -140,7 +146,9 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# move worspace to next output
+bindsym $mod+$smod+t+$wm_setting_key_left move workspace to output left
+bindsym $mod+$smod+t+$wm_setting_key_right move workspace to output right
 
 ### Gaps ###
 gaps horizontal $wm_setting_gap_width
@@ -205,5 +213,21 @@ bindsym $mod+$smod+r restart
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # worspaces / monitors
-workspace "console" output DP-0.1.5
-workspace "web" output DP-0.1.6
+workspace "1-console" output DP-0.1.5
+workspace "2-web" output DP-0.1.6
+workspace "3-vmm" output DP-0.2
+# Setup xss-lock daemon
+exec_always --no-startup-id xset +dpms dpms 0 300 300 
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh 
+
+
+# lock screen
+bindsym $smod + $mod + x mode "lock"
+
+mode "lock" {
+    bindsym l exec i3lock --ignore-empty-password --tiling --image='~/.config/i3/lockscreen.jpg' , mode "default"
+    # just force suspend. i3lock will be called automatically via lock.sh 
+    bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+}
+
+exec setxkbmap -layout us -variant intl

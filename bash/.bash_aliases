@@ -1,7 +1,8 @@
-alias ll='ls -l'
+alias llr='ls -lrt'
 alias la='ls -A'
 alias l='ls -CF'
 alias bcat='batcat --paging=never'
+alias bat='batcat --paging=never'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -29,6 +30,7 @@ alias multitail='multitail --no-repeat -c'
 
 # Change directory aliases
 alias home='cd $HOME'
+alias dl='cd $HOME/Downloads'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -54,7 +56,8 @@ alias lr='ls -lRh' # recursive ls
 alias lt='ls -ltrh' # sort by date
 alias lm='ls -alh |more' # pipe through 'more'
 alias lw='ls -xAh' # wide listing format
-alias ll='ls -Fls' # long listing format
+alias ll='ls -Flst' # long listing format
+alias llr='ls -Flsrt' # long listing format
 alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
@@ -76,7 +79,6 @@ alias sshLoad='ssh-add $HOME/Shell/LoginRootFirewalls.key $HOME/Shell/LoginMTF.k
 
 #functions
 
-## Yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -84,3 +86,9 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+## Misc
+alias tracert="traceroute"
+alias mip="ip --br a"
+alias mpip="echo $(wget -qO- https://ipecho.net/plain)"
+
