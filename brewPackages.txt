@@ -1,6 +1,8 @@
 azure-cli
 bash
 bash-completion@2
+bat
+bind
 cmctl
 git
 helm

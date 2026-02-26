@@ -1,9 +1,8 @@
 alias llr='ls -lrt'
 alias la='ls -A'
 alias l='ls -CF'
-alias bcat='batcat --paging=never'
-alias bat='batcat --paging=never'
 # enable color support of ls and also add handy aliases
+
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
