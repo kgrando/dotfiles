@@ -90,4 +90,4 @@ function y() {
 alias tracert="traceroute"
 alias mip="ip --br a"
 alias mpip="echo $(wget -qO- https://ipecho.net/plain)"
-
+alias python3="/opt/homebrew/bin/python3.13"
