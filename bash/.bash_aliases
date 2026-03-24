@@ -74,6 +74,8 @@ alias ks='kubecm switch'
 # SSH
 alias asp='ssh root@asp.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
 alias sslvpn='ssh root@sslvpn.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
+alias scgate='ssh gke-ssh@scfw.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
+alias igate='ssh gke-ssh@fw.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
 alias sshLoad='ssh-add $HOME/Shell/LoginRootFirewalls.key $HOME/Shell/LoginMTF.key'
 
 #functions
@@ -90,4 +92,6 @@ function y() {
 alias tracert="traceroute"
 alias mip="ip --br a"
 alias mpip="echo $(wget -qO- https://ipecho.net/plain)"
-alias python3="/opt/homebrew/bin/python3.13"
+
+# python symlink brew
+ln -s python3.13 /opt/homebrew/bin/python3
