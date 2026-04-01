@@ -117,7 +117,7 @@ fi
 # for Ranger...
 
 eval "$($BREW_PATH/brew shellenv)"
-eval "$($BREW_PATH/oh-my-posh init bash --config $HOME/.config/poshthemes/velvet.omp.json)"
+eval "$($BREW_PATH/oh-my-posh init bash --config $HOME/.config/poshthemes/kali.omp.json)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -71,11 +71,11 @@ alias k='kubectl'
 alias h='helm'
 alias ks='kubecm switch'
 
-# SSH
-alias asp='ssh root@asp.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
-alias sslvpn='ssh root@sslvpn.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
-alias scgate='ssh gke-ssh@scfw.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
-alias igate='ssh gke-ssh@fw.root.ch -i $HOME/Shell/LoginRootFirewalls.key'
+# SSH (-i before destination so tmux dracula plugin can parse the host)
+alias asp='ssh -i $HOME/Shell/LoginRootFirewalls.key root@asp.root.ch'
+alias sslvpn='ssh -i $HOME/Shell/LoginRootFirewalls.key root@sslvpn.root.ch'
+alias scgate='ssh -i $HOME/Shell/LoginRootFirewalls.key gke-ssh@scfw.root.ch'
+alias igate='ssh -i $HOME/Shell/LoginRootFirewalls.key gke-ssh@fw.root.ch'
 alias sshLoad='ssh-add $HOME/Shell/LoginRootFirewalls.key $HOME/Shell/LoginMTF.key'
 
 #functions
