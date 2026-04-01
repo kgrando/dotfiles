@@ -62,7 +62,7 @@ alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
 
 # docker alias
-alias dpurge='docker image rm $(docker image ls -q) && docker volume rm $(docker volume ls)' 
+alias dpurge='docker system prune -a --volumes'
 alias dc='docker compose'
 
 # Kubernetes
@@ -91,7 +91,5 @@ function y() {
 ## Misc
 alias tracert="traceroute"
 alias mip="ip --br a"
-alias mpip="echo $(wget -qO- https://ipecho.net/plain)"
 
-# python symlink brew
-ln -s python3.13 /opt/homebrew/bin/python3
+myip() { wget -qO- https://ipecho.net/plain; echo; }

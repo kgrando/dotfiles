@@ -1,0 +1,32 @@
+{
+    "$schema": "https://lnav.org/schemas/config-v1.schema.json",
+    "ui": {
+        "theme": "dracula",
+        "clock-format": "%Y-%m-%d %H:%M:%S",
+        "dim-text": false,
+        "default-colors": true,
+        "mouse": {
+            "mode": "enabled"
+        }
+    },
+    "log": {
+        "date-time": {
+            "convert-zulu-to-local": true
+        }
+    },
+    "global": {
+        "keymap": "custom"
+    },
+    "keymap_def": {
+        "custom": {
+            "mapping": {
+                "x3c": {
+                    "command": ":prev-mark error"
+                },
+                "x3e": {
+                    "command": ":next-mark error"
+                }
+            }
+        }
+    }
+}

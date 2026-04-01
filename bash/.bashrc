@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=50000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -147,8 +147,7 @@ function start_agent {
 
 if [ -f "$SSH_ENV" ]; then
     . "$SSH_ENV" >/dev/null
-    #ps $SSH_AGENT_PID doesn't work under Cygwin
-    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ >/dev/null || {
+    ps -ef | grep "$SSH_AGENT_PID" | grep ssh-agent$ >/dev/null || {
         start_agent
     } 
 else

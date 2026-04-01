@@ -1,0 +1,45 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "k8s_pod_log": {
+        "title": "Kubernetes Pod Log (kubectl logs)",
+        "description": "Format for Kubernetes pod logs piped through kubectl",
+        "regex": {
+            "std": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:?\\d{2})?)\\s+(?<level>\\w+)\\s+(?<body>.*)"
+            }
+        },
+        "level": {
+            "error": "ERROR|FATAL|CRITICAL|SEVERE",
+            "warning": "WARN|WARNING",
+            "info": "INFO|NOTICE",
+            "debug": "DEBUG|TRACE|FINE"
+        },
+        "timestamp-format": [
+            "%Y-%m-%dT%H:%M:%S.%f%z",
+            "%Y-%m-%dT%H:%M:%S%z",
+            "%Y-%m-%d %H:%M:%S.%f",
+            "%Y-%m-%d %H:%M:%S"
+        ],
+        "body-field": "body",
+        "ordered-by-time": true,
+        "level-field": "level",
+        "sample": [
+            {
+                "line": "2024-01-15T10:30:45.123Z INFO Starting application server on port 8080",
+                "level": "info"
+            },
+            {
+                "line": "2024-01-15T10:30:46.456Z ERROR Failed to connect to database: connection refused",
+                "level": "error"
+            },
+            {
+                "line": "2024-01-15 10:30:47.789 WARNING High memory usage detected",
+                "level": "warning"
+            },
+            {
+                "line": "2024-01-15T10:30:48.000+01:00 DEBUG Processing request id=abc-123",
+                "level": "debug"
+            }
+        ]
+    }
+}
