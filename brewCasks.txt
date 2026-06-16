@@ -1,6 +1,7 @@
 adobe-acrobat-reader
 anydesk
 cyberduck
+docker-desktop
 drawio
 font-hack-nerd-font
 git-credential-manager
@@ -11,6 +12,7 @@ keka
 kitty
 logitech-g-hub
 maccy
+macshot
 mediathekview
 microsoft-azure-storage-explorer
 netnewswire
@@ -24,5 +26,7 @@ sonos
 teamviewer
 tunnelblick
 vlc
+vnc-viewer
 windows-app
+wireshark-app
 zoom

@@ -4,9 +4,11 @@ bash-completion@2
 bat
 bind
 cmctl
+displayplacer
 git
 helm
 htop
+iperf3
 k9s
 krew
 kubecm
@@ -15,10 +17,14 @@ kubernetes-cli
 lazygit
 lnav
 neovim
+nmap
 nushell
 oh-my-posh
 popeye
+poppler
+powershell
 ranger
+ripgrep
 sevenzip
 shfmt
 snappy
@@ -31,5 +37,6 @@ tmux
 trash-cli
 watch
 wget
+wireshark
 yazi
 yq
